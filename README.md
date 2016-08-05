@@ -1,13 +1,13 @@
 # MySQLAngularJSPhonecat
 <p>
 <ul>
-  <li>Open your Terminal</li>
-  <li><b>cd AngularJSPhonecat</b></li>
-  <li>node mysqlPhonecat.js</li>
+  <li>Open the folder <b>MySQLAngularJSPhonecat</b> and right click and select Git Bash if you install GIT. the Terminal will open</li>
+  <li><b>cd AngularJSPhonecat</li>
+  <li>node mysqlPhonecat.js</b></li>
   <li>it will display Server running on 3000</li>
 </ul>
 </p>
 
 <p>
-<b> Now you can browse the url : http://localhost:3000 or http://localhost:3000/#/phones</b>
+<b> Now you can browse the url :</b> http://localhost:3000 or http://localhost:3000/#/phones
 </p>
