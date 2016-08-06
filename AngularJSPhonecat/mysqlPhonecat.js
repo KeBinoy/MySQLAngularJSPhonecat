@@ -24,8 +24,9 @@ app.get('/phonelist', function(req, res){
 });
 /*app.get('/phonedetail/:ids ', function(req, res){*/
 	//res.send("Hello HTML!");
-app.get('/phonedetail', function(req, res){
-	console.log(req.params.ids);
+app.get('/phonedetail/:id', function(req, res){
+	 var id = req.params.id;
+	//console.log(req.params.id);
 	connection.query("SELECT "+
 		"id, "+
 		"description, "+ 
@@ -53,7 +54,8 @@ app.get('/phonedetail', function(req, res){
 	"INNER JOIN images AS i ON i.phone_id=pd.phone_id "+
 	"INNER JOIN size_weight AS sw ON sw.phone_id=pd.phone_id "+
 	"INNER JOIN storage AS s ON s.phone_id=pd.phone_id "+
-	 "WHERE id= 'motorola-xoom-with-wi-fi'", function(error,rows,fields){
+	 /*"WHERE id= 'motorola-xoom-with-wi-fi'", function(error,rows,fields){*/
+	 	"WHERE pd.id= '"+id+"'", function(error,rows,fields){
 	 	/*"WHERE id= '"+req.params.ids+"'", function(error,rows,fields){*/
 	 	//console.log(JSON.stringify(rows))
 		res.end(JSON.stringify(rows));
