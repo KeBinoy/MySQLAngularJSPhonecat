@@ -1,6 +1,6 @@
 var phonecatControllers = angular.module('phonecatControllers', []);
 var phonelistURL = 'http://localhost:3000/phonelist';
-var phonedetailURL = 'http://localhost:3000/phonedetail';
+var phonedetailURL = 'http://localhost:3000/phonedetail/';
 
 phonecatControllers.controller('PhoneListCtrl', ['$scope', '$http',
   function ($scope, $http) {
@@ -20,7 +20,7 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams',
 phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', '$http',
   function($scope, $routeParams, $http) {
     /*$http.get('phones/' + $routeParams.phoneId + '.json').success(function(data) {*/
-      $http.get(phonedetailURL).success(function(data) {
+      $http.get(phonedetailURL+ $routeParams.phoneId).success(function(data) {
       $scope.phone = data;
     });
   }]);
@@ -28,7 +28,7 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', '$h
 phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', '$http',
   function($scope, $routeParams, $http) {
     //$http.get('phones/' + $routeParams.phoneId + '.json').success(function(data) {
-      $http.get(phonedetailURL).success(function(data) {
+      $http.get(phonedetailURL+ $routeParams.phoneId ).success(function(data) {
         // console.log(data);
      // console.log(data);
       $scope.phone = data[0];
